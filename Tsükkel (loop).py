@@ -104,10 +104,10 @@ def multiply_between(start: int, end: int) -> int:
     """
     # Your code goes here
     numbers = list(range(start, end + 1))
-    total = 1
+    sum = 1
     for number in numbers:
-        total = total * number
-    return total
+        sum = sum * number
+    return sum
 
 if __name__ == "__main__":
     print(multiply_between(1, 3)) #=> 1 * 2 * 3 = 6
