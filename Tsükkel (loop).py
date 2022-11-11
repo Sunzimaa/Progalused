@@ -113,3 +113,73 @@ if __name__ == "__main__":
     print(multiply_between(1, 3)) #=> 1 * 2 * 3 = 6
     print(multiply_between(4, 14)) #=> 14529715200
     print(multiply_between(0, 7)) #=> 0
+
+
+    print("---------------------------------")
+
+
+#6. Make hola string
+
+def make_hola_string(count: int) -> str:
+    """
+    Make hola string.
+
+    print(make_hola_string(3)) => "holaholahola"
+    print(make_hola_string(0)) => ""
+    """
+    # Your code goes here
+
+    count = range(0, count)
+    final = ""
+    for i in count:
+        final = final + "hola"
+    return final
+
+if __name__ == "__main__":
+    print(make_hola_string(3)) #=> "holaholahola"
+    print(make_hola_string(0)) #=> ""
+
+
+    print("---------------------------------")
+
+
+#7. Compound interest
+
+def compound_interest(amount: int, years: int, rate: int) -> float:
+    """
+    Calculate compound interest.
+    print(compound_interest(100, 2, 2)) => 104.04
+    print(compound_interest(2000, 6, 8)) => 3173.748645888
+    """
+    years = range(0, years)
+    total = amount
+    for year in years:
+        total = total + (total * (rate / 100))
+    return total
+
+if __name__ == "__main__":
+    print(compound_interest(100, 2, 2)) #= > 104.04
+    print(compound_interest(2000, 6, 8)) #= > 3173.748645888
+#8. Remove vowels
+
+
+    print("---------------------------------")
+
+
+def remove_vowels(original_string: str) -> str:
+    """
+    Return the given string without vowels.
+    print(remove_vowels("tere-tere")) => tr-tr
+    print(remove_vowels("hklmn")) => hklmn
+    print(remove_vowels("aauuiii")) => ""
+    """
+    final = ""
+    for letter in original_string:
+        if letter not in "aeiouüõäö":
+            final = final + letter
+    return final
+
+if __name__ == "__main__":
+    print(remove_vowels("tere-tere")) #=> tr-tr
+    print(remove_vowels("hklmn")) #=> hklmn
+    print(remove_vowels("aauuiii")) #=> ""
