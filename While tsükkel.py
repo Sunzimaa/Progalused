@@ -20,6 +20,7 @@ if __name__ == "__main__":
     print(make_hola_string(3)) #=> "holaholahola"
     print(make_hola_string(0)) #=> ""
 
+import random
 def generate_string_with_random_length(threshold: float) -> str:
     """
     Generate a string of "-" until random numbers is below threshold.
@@ -32,9 +33,14 @@ def generate_string_with_random_length(threshold: float) -> str:
     generate_string_with_random_length(0.5) => "-" (usually empty or 1 minus)
     """
     # code here
-    sum = random.random(0, 1)
-    print(sum)
 
+    result = ""
+    while(random.random() < threshold):
+        result = result + "-"
+    return result
+
+print(generate_string_with_random_length(0.9))
+print(generate_string_with_random_length(0.5))
 
 def ask_user_age(age_limit: int) -> int:
     """
@@ -67,4 +73,20 @@ def ask_user_age(age_limit: int) -> int:
 
     (function returns 21)
     """
-    return 10
+    while True:
+        print("What is your age?")
+        age = input()
+        if age.isalpha():
+            print("Wrong input!")
+        else:
+            age = int(age)
+            if age < age_limit:
+                print("Too young!")
+            elif age > 100:
+                print("Too old!")
+            elif age == age_limit:
+                break
+
+    return age
+
+print(ask_user_age(21))
