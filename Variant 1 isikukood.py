@@ -9,10 +9,12 @@ päev = int(isikukood[5:7])
 
 
 
-print("Sünni aasta on " + str(aasta) + ", sünni5kuupäev on " + str(päev) + "." + str(kuu) + ".")
+print("Sünni aasta on " + str(aasta) + ", sünnikuupäev on " + str(päev) + "." + str(kuu) + ".")
 todays_date = date.today()
 praegune = todays_date
 praegu_aasta = str(todays_date.year)[2:4]
+
+
 
 sugu = int(isikukood[0:1])
 if sugu == 1:
@@ -32,9 +34,18 @@ elif sugu == 6:
 a = (int(aasta))
 b = int(praegu_aasta)
 
+
 if a>b:
     age = b-a+100
 else:
     age = b-a
+
+#def age(a, b):
+#    if a > b:
+#        age = b - a + 100
+#    else:
+#        age = b - a
+#    return age
+
 
 print(f"Vanus on: {age}")
